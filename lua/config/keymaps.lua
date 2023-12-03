@@ -32,3 +32,9 @@ map("n", "<space>", "/")
 map("n", "<C-space>", "?")
 map("n", "<leader>te", ":tabedit ")
 
+
+vim.keymap.del("n", "<leader>ww")
+vim.keymap.del("n", "<leader>w-")
+vim.keymap.del("n", "<leader>w|")
+vim.keymap.del("n", "<leader>wd")
+
