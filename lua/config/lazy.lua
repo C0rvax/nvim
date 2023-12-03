@@ -18,7 +18,6 @@ require("lazy").setup({
 	{'neovim/nvim-lspconfig', dependencies = {'hrsh7th/cmp-nvim-lsp'}, },
   	{'hrsh7th/nvim-cmp', dependencies = {'L3MON4D3/LuaSnip'}, },
     	{ "nvim-tree/nvim-web-devicons" },
-	{ "mcchrish/zenbones.nvim", requires = "rktjmp/lush.nvim"},
 	{ "voldikss/vim-floaterm" },
 	{
 		"Diogo-ss/42-header.nvim",

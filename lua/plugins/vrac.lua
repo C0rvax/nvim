@@ -1,24 +1,5 @@
 return {
 	
-	-- THEMES
-	
-    	{ "NLKNguyen/papercolor-theme" },
-	{ "craftzdog/solarized-osaka.nvim", lazy = false, priority = 1000, opts = {}, },
-	{ "kyazdani42/nvim-palenight.lua" },
-	{ 'redshifttt/tonight.nvim' },
-  	{ "baliestri/aura-theme" },
-  	{ "EdenEast/nightfox.nvim" },
-  	{ 'navarasu/onedark.nvim' },
-	
-	-- Configure LazyVim to load PaperColor
-  
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "carbonfox",
-    },
-  },
-
   -- change trouble config
   
   {
@@ -27,9 +8,6 @@ return {
     opts = { use_diagnostic_signs = true },
   },
 
-  -- disable trouble
-  
-  { "folke/trouble.nvim", enabled = false },
 
   -- add symbols-outline
   
@@ -90,31 +68,6 @@ return {
     },
   },
 
-  -- add more treesitter parsers
-  
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-      	"c",
-        "bash",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "query",
-        "regex",
-        "tsx",
-        "typescript",
-        "vim",
-        "yaml",
-      },
-    },
-  },
-  
   -- the opts function can also be used to change the default opts:
   
   {
@@ -122,18 +75,6 @@ return {
     event = "VeryLazy",
     opts = function(_, opts)
       table.insert(opts.sections.lualine_x, "😄")
-    end,
-  },
-
-  -- or you can return new options to override all the defaults
-  
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = function()
-      return {
-        --[[add your custom lualine config here]]
-      }
     end,
   },
 
@@ -155,7 +96,7 @@ return {
     },
   },
 
-  -- Use <tab> for completion and snippets (supertab)
+  --[[ Use <tab> for completion and snippets (supertab)
   -- first: disable default <tab> and <s-tab> behavior in LuaSnip
   
   {
@@ -166,7 +107,7 @@ return {
   },
   
   -- then: setup supertab in cmp
-  --[[
+
   {
     "hrsh7th/nvim-cmp",
     dependencies = {

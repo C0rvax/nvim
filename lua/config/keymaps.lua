@@ -15,8 +15,8 @@ vim.keymap.set("n", "<Leader>x", ":bd<CR>")
 vim.keymap.set("n", "<Tab>", ":bnext<CR>")
 --vim.keymap.set("i", "<TAB>", ">>")
 
-vim.keymap.set("n", "<Leader>w", ":w!<cr>")
-vim.keymap.set("n", "<Leader>q", ":q!<cr>")
+vim.keymap.set("n", "<Leader>w", ":w!<cr>", { desc = "Save" })
+vim.keymap.set("n", "<Leader>q", ":q!<cr>", { desc = "Quit" })
 
 local map = vim.keymap.set
 
