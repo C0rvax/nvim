@@ -166,7 +166,7 @@ return {
   },
   
   -- then: setup supertab in cmp
-  
+  --[[
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -209,5 +209,6 @@ return {
       })
     end,
   },
+  ]]
 }
 

@@ -10,5 +10,6 @@ opt.relativenumber = false
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.background = 'dark'
-opt.expandtab = false -- Use spaces instead of tabs
+opt.expandtab = true -- Use spaces instead of tabs
 opt.list = false -- show some invisible characters (tabs...
+opt.colorcolumn = "80"

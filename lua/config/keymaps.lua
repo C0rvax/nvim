@@ -13,6 +13,7 @@ vim.keymap.set("n", "<Leader>er", vim.diagnostic.open_float)
 
 vim.keymap.set("n", "<Leader>x", ":bd<CR>")
 vim.keymap.set("n", "<Tab>", ":bnext<CR>")
+--vim.keymap.set("i", "<TAB>", ">>")
 
 vim.keymap.set("n", "<Leader>w", ":w!<cr>")
 vim.keymap.set("n", "<Leader>q", ":q!<cr>")
