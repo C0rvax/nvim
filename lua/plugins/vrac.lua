@@ -17,6 +17,7 @@ return {
     keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
     config = true,
   },
+  { "mg979/vim-visual-multi"},
 
   -- override nvim-cmp and add cmp-emoji
   
