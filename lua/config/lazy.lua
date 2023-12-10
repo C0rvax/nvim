@@ -15,26 +15,6 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- import/override with your plugins
-	{'neovim/nvim-lspconfig', dependencies = {'hrsh7th/cmp-nvim-lsp'}, },
-  	{'hrsh7th/nvim-cmp', dependencies = {'L3MON4D3/LuaSnip'}, },
-    	{ "nvim-tree/nvim-web-devicons" },
-	{ "voldikss/vim-floaterm" },
-	{
-		"Diogo-ss/42-header.nvim",
-		lazy = false,
-		config = function()
-		local header = require("42header")
-		header.setup({
-			default_map = true, -- default Mapping <F1> in normal mode
-			auto_update = true,  -- update header when saving
-			user = "aduvilla", -- your user
-			mail = "aduvilla@student.42.fr", -- your mail
-		})
-		end
-	},
-	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
-	{ "lewis6991/gitsigns.nvim", config = function() require("gitsigns").setup() end },
-	{ "nvim-lualine/lualine.nvim", config = function() require("lualine").setup() end },
     { import = "plugins" },
   },
   defaults = {
@@ -46,7 +26,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "slate", "tokyonight", "habamax", "palenight" } },
+  install = { colorscheme = { "tokyonight", "habamax" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {

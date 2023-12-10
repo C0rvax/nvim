@@ -17,9 +17,30 @@ return {
     keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
     config = true,
   },
+  -- Vrac
+  
   { "mg979/vim-visual-multi"},
-
-  -- override nvim-cmp and add cmp-emoji
+	{ "nvim-tree/nvim-web-devicons" },
+	{ "voldikss/vim-floaterm" },
+	{'L3MON4D3/LuaSnip'},
+	{
+		"Diogo-ss/42-header.nvim",
+		lazy = false,
+		config = function()
+		local header = require("42header")
+		header.setup({
+			default_map = true, -- default Mapping <F1> in normal mode
+			auto_update = true,  -- update header when saving
+			user = "aduvilla", -- your user
+			mail = "aduvilla@student.42.fr", -- your mail
+		})
+		end
+	},
+	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+	{ "lewis6991/gitsigns.nvim", config = function() require("gitsigns").setup() end },
+	{ "nvim-lualine/lualine.nvim", config = function() require("lualine").setup() end },
+	
+  --[[ override nvim-cmp and add cmp-emoji
   
   {
     "hrsh7th/nvim-cmp",
@@ -28,7 +49,7 @@ return {
     opts = function(_, opts)
       table.insert(opts.sources, { name = "emoji" })
     end,
-  },
+  },]]
   
     -- change some telescope options and a keymap to browse plugin files
   
