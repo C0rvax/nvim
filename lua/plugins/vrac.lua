@@ -8,22 +8,13 @@ return {
     opts = { use_diagnostic_signs = true },
   },
 
-
-  -- add symbols-outline
-  
-  {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-    config = true,
-  },
   -- Vrac
   
   	{ "mg979/vim-visual-multi"},
   	{ "williamboman/nvim-lsp-installer"},
-	{ "nvim-tree/nvim-web-devicons" },
 	{ "voldikss/vim-floaterm" },
 	{'L3MON4D3/LuaSnip'},
+	{ "hrsh7th/nvim-cmp", dependencies = { "hrsh7th/cmp-emoji",},},
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 	{ "lewis6991/gitsigns.nvim", config = function() require("gitsigns").setup() end },
 	{ "nvim-lualine/lualine.nvim", config = function() require("lualine").setup() end },
@@ -92,13 +83,5 @@ return {
 
   -- use mini.starter instead of alpha
   { import = "lazyvim.plugins.extras.ui.mini-starter" },
-
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-emoji",
-    },
-
-},
 }
 
