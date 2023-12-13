@@ -20,6 +20,7 @@ return {
   -- Vrac
   
   	{ "mg979/vim-visual-multi"},
+  	{ "williamboman/nvim-lsp-installer"},
 	{ "nvim-tree/nvim-web-devicons" },
 	{ "voldikss/vim-floaterm" },
 	{'L3MON4D3/LuaSnip'},
