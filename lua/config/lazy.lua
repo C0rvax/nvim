@@ -14,11 +14,8 @@ require("lazy").setup({
     { import = "plugins" },
   },
   defaults = {
-
     lazy = false,
-
     version = false, -- always use the latest git commit
-
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
   checker = { enabled = true }, -- automatically check for plugin updates
@@ -38,7 +35,7 @@ require("lazy").setup({
     },
   },
 })
-
+--[[
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
   return
@@ -169,4 +166,4 @@ cmp.setup {
     ghost_text = false,
     native_menu = false,
   },
-}
+}]]
