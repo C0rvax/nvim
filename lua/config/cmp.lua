@@ -130,6 +130,8 @@ cmp.setup {
   },
 }
 
+	-- Desactive cmp de base et le reactive avec la commande <Leader>ua
+	
 vim.g.cmptoggle = false
 
 local cmp = require('cmp')
