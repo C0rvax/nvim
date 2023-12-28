@@ -18,7 +18,7 @@ vim.keymap.set("n", "<Leader>w", ":w!<cr>", { desc = "Save" })
 vim.keymap.set("n", "<Leader>q", ":q!<cr>", { desc = "Quit" })
 
 vim.keymap.set("v", "<Leader>(", "<esc>`>a)<esc>`<i(<esc>", { desc = "parenthesis" })
-vim.keymap.set("v", "<Leader>)", ":s/\\%V\\(.*\\)\\%V/(\\1)/<CR>", { desc = "parenthesis" })
+vim.keymap.set("n", "<Leader>)", "0i{<CR><esc>o}<esc>", { desc = "bracket" })
 vim.keymap.set("v", "<Leader>'", ":s/\\%V\\(.*\\)\\%V/\"\\1\"/<CR>", opts)
 vim.keymap.set("v", "<Leader>\"", ":s/\\%V\\(.*\\)\\%V/\'\\1\'/<CR>", opts)
 vim.keymap.set("v", "<Leader>[", ":s/\\%V\\(.*\\)\\%V/[\\1]/<CR>", opts)
