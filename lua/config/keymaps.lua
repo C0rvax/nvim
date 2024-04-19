@@ -38,6 +38,8 @@ map("n", "<space>", "/")
 map("n", "<C-space>", "?")
 map("n", "<leader>te", ":tabedit ")
 
+map('n', '<leader>a', ':lua vim.lsp.buf.definition()<CR>')
+map('n', '<leader>v', ':vsplit | lua vim.lsp.buf.definition()<CR>')
 
 vim.keymap.del("n", "<leader>ww")
 vim.keymap.del("n", "<leader>w-")
