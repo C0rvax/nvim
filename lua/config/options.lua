@@ -13,4 +13,4 @@ opt.background = 'dark'
 opt.autoindent = true
 opt.expandtab = false -- Use spaces instead of tabs
 opt.list = false -- show some invisible characters (tabs...
-opt.colorcolumn = "80"
+opt.colorcolumn = "80" -- color column number 80

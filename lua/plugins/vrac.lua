@@ -13,7 +13,7 @@ return {
   	{ "mg979/vim-visual-multi"},
   	{ "williamboman/nvim-lsp-installer"},
 	{ "voldikss/vim-floaterm" },
-	{'L3MON4D3/LuaSnip'},
+	--{'L3MON4D3/LuaSnip'},
 	{ "hrsh7th/nvim-cmp", dependencies = { "hrsh7th/cmp-emoji",},},
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 	{ "lewis6991/gitsigns.nvim", config = function() require("gitsigns").setup() end },

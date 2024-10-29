@@ -5,10 +5,15 @@ end
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
+  print("Erreur lors du chargement de luasnip")
   return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load()
+local loaders_status_ok, loaders = pcall(require, "luasnip.loaders.from_vscode")
+if not loaders_status_ok then
+    print("Erreur lors du chargement de 'luasnip.loaders.from_vscode': ")
+    return
+end
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -58,10 +63,16 @@ cmp.setup {
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ["<Leader>"] = cmp.mapping {
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    },
+
+    -- map la touche ',' (leader) pour abort cmp
+    [","] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.abort()
+      else
+        fallback()
+      end
+    end, { "i", "s"}),
+
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = true },
@@ -130,6 +141,7 @@ cmp.setup {
   },
 }
 
+--[[
 	-- Desactive cmp de base et le reactive avec la commande <Leader>ua
 	
 vim.g.cmptoggle = false
@@ -140,3 +152,4 @@ cmp.setup {
     return vim.g.cmptoggle
   end
 }
+]]
