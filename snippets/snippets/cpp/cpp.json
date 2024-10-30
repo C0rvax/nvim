@@ -272,12 +272,12 @@
     "#guard": {
       "prefix": "#guard",
       "body": [
-        "#ifndef ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}",
-        "#define ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}",
+        "#ifndef ${TM_FILENAME_BASE/(.*)/__${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__",
+        "#define ${TM_FILENAME_BASE/(.*)/__${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__",
         "",
         "$0",
         "",
-        "#endif  // INCLUDE${TM_DIRECTORY/.*[\\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_"
+        "#endif  /* ${TM_FILENAME_BASE/(.*)/__${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__ */"
       ],
       "description": "header guard. format :\n\tINCLUDE_<dirname>_<filename>_<extension>_"
     },
