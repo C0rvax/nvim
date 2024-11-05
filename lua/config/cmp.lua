@@ -3,6 +3,7 @@ if not cmp_status_ok then
   return
 end
 
+--[[
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
   print("Erreur lors du chargement de luasnip")
@@ -17,7 +18,7 @@ end
 
 -- Charger les snippets personnalisés
 require("luasnip.loaders.from_vscode").lazy_load({paths = "~/.config/nvim/snippets"})
-
+]]
 local check_backspace = function()
   local col = vim.fn.col "." - 1
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
@@ -54,11 +55,14 @@ local kind_icons = {
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
 cmp.setup {
+--[[
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body) -- For `luasnip` users.
+      vim.snippet.lsp_expand(args.body)
+      --luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
+]]
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -82,10 +86,12 @@ cmp.setup {
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.expandable() then
-        luasnip.expand()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
+      elseif vim.snippet.active({ direction = 1 }) then
+        vim.snippet.jump(1)
+--      elseif luasnip.expandable() then
+--        luasnip.expand()
+--      elseif luasnip.expand_or_jumpable() then
+--        luasnip.expand_or_jump()
       elseif check_backspace() then
         fallback()
       else
@@ -98,8 +104,10 @@ cmp.setup {
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
+      elseif vim.snippet.active({ direction = -1 }) then
+        vim.snippet.jump(-1)
+--      elseif luasnip.jumpable(-1) then
+--        luasnip.jump(-1)
       else
         fallback()
       end
@@ -108,14 +116,33 @@ cmp.setup {
       "s",
     }),
   },
+
+  confirm_opts = {
+    behavior = cmp.ConfirmBehavior.Replace,
+    select = false,
+  },
+
+  window = {
+    documentation = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    },
+  },
+
+  experimental = {
+    ghost_text = false,
+    native_menu = false,
+  },
+
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
       -- Kind icons
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+
+      -- This concatonates the icons with the name of the item kind:
+      --vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
       vim_item.menu = ({
-        luasnip = "[Snippet]",
+        snippets = "[Snippet]",
         nvim_lsp = "[LSP]",
         buffer = "[Buffer]",
         path = "[Path]",
@@ -123,27 +150,14 @@ cmp.setup {
       return vim_item
     end,
   },
+
   sources = {
     { name = "nvim_lsp", priority = 800 },
-    { name = "luasnip", priority = 1000 },
+    { name = "snippets", priority = 1000 },
     { name = "buffer" },
     { name = "path" },
   },
-  confirm_opts = {
-    behavior = cmp.ConfirmBehavior.Replace,
-    select = false,
-  },
-  window = {
-    documentation = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-    },
-  },
-  experimental = {
-    ghost_text = false,
-    native_menu = false,
-  },
 }
-
 --[[
 	-- Desactive cmp de base et le reactive avec la commande <Leader>ua
 	
