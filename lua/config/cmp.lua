@@ -137,8 +137,8 @@ cmp.setup({
   },
 
   sources = {
-    { name = "luasnip", priority = 1000 },
-    { name = "nvim_lsp", priority = 800 },
+    { name = "luasnip" },
+    --{ name = "nvim_lsp" },
     { name = "buffer" },
     { name = "path" },
     --{ name = "snippets", priority = 1000 },

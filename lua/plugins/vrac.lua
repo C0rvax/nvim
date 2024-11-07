@@ -1,12 +1,18 @@
 return {
 
   -- Vrac
+
+    { "hrsh7th/nvim-cmp", dependencies = { "hrsh7th/cmp-emoji",},},
+    { 'L3MON4D3/LuaSnip', build = "make install_jsregexp"},
+    { "williamboman/nvim-lsp-installer"},
+    { "hrsh7th/lspkind-nvim" },
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/cmp-path' },
+    { "saadparwaiz1/cmp_luasnip" },
+
     { "mg979/vim-visual-multi"},
-  	{ "williamboman/nvim-lsp-installer"},
-	{ 'L3MON4D3/LuaSnip', build = "make install_jsregexp"},
-	{ "saadparwaiz1/cmp_luasnip" },
-	{ "hrsh7th/nvim-cmp", dependencies = { "hrsh7th/cmp-emoji",},},
-	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+	{ 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 	{ "lewis6991/gitsigns.nvim", config = function() require("gitsigns").setup() end },
 	{ "nvim-lualine/lualine.nvim", config = function() require("lualine").setup() end },
 	{ "Diogo-ss/42-header.nvim",
