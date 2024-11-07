@@ -297,14 +297,14 @@
     "#guard": {
       "prefix": "#guard",
       "body": [
-        "#ifndef ${TM_FILENAME_BASE/(.*)/__${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__",
-        "#define ${TM_FILENAME_BASE/(.*)/__${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__",
+        "#ifndef __${TM_FILENAME_BASE/(.*)/${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__",
+        "#define __${TM_FILENAME_BASE/(.*)/${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__",
         "",
         "$0",
         "",
-        "#endif  /* ${TM_FILENAME_BASE/(.*)/__${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__ */"
+        "#endif  /* __${TM_FILENAME_BASE/(.*)/${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__ */"
       ],
-      "description": "header guard. format :\n\tINCLUDE_<dirname>_<filename>_<extension>_"
+      "description": "header guard. format :\n\t__<filename>_<extension>__"
     },
     "sca": {
       "prefix": "sca",

@@ -1,25 +1,15 @@
 return {
-	
-  -- change trouble config
-  
-  {
-    "folke/trouble.nvim",
-    -- opts will be merged with the parent spec
-    opts = { use_diagnostic_signs = true },
-  },
 
   -- Vrac
-  
-  	{ "mg979/vim-visual-multi"},
+    { "mg979/vim-visual-multi"},
   	{ "williamboman/nvim-lsp-installer"},
-	{ "voldikss/vim-floaterm" },
-	--{'L3MON4D3/LuaSnip'},
+	{ 'L3MON4D3/LuaSnip', build = "make install_jsregexp"},
+	{ "saadparwaiz1/cmp_luasnip" },
 	{ "hrsh7th/nvim-cmp", dependencies = { "hrsh7th/cmp-emoji",},},
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 	{ "lewis6991/gitsigns.nvim", config = function() require("gitsigns").setup() end },
 	{ "nvim-lualine/lualine.nvim", config = function() require("lualine").setup() end },
-	{
-		"Diogo-ss/42-header.nvim",
+	{ "Diogo-ss/42-header.nvim",
 		lazy = false,
 		config = function()
 		local header = require("42header")
@@ -33,7 +23,6 @@ return {
 	},
  
     -- change some telescope options and a keymap to browse plugin files
-  
   {
     "nvim-telescope/telescope.nvim",
     keys = {
@@ -47,7 +36,6 @@ return {
     },
   
     -- change some options
-  
     opts = {
       defaults = {
         layout_strategy = "horizontal",
@@ -59,7 +47,6 @@ return {
   },
 
   -- add telescope-fzf-native
-  
   {
     "telescope.nvim",
     dependencies = {
@@ -71,10 +58,7 @@ return {
     },
   },
 
-
   -- the opts function can also be used to change the default opts:
-  
-
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
