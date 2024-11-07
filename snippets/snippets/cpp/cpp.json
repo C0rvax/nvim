@@ -93,7 +93,7 @@
 			"{",
 			"\tif (this != &rhs)",
 			"\t\t$0",
-			"\treturn *this",
+			"\treturn *this;",
 			"}",
 			"",
 			"$1::~$1\t(void)",
@@ -151,17 +151,14 @@
     "classi": {
         "prefix": "classi",
         "body": [
-            "class ${1:MyClass} {",
-            "public:",
-            "\t$1() = default;",
-            "\t$1($1 &&) = default;",
-            "\t$1(const $1 &) = default;",
-            "\t$1 &operator=($1 &&) = default;",
-            "\t$1 &operator=(const $1 &) = default;",
-            "\t~$1() = default;",
+            "class ${1:MyClass}",
+            "{",
+            "   public:",
+            "   \t$1(void);",
+            "   \t~$1(void);",
             "",
-            "private:",
-            "\t$2",
+            "   private:",
+            "   \t$0",
             "};"
         ],
         "description": "Code snippet for class with inline constructor/destructor"
