@@ -9,7 +9,7 @@ vim.keymap.set("t", "<A-g>", "lazygit<CR>")
 vim.keymap.set("t", "<C-l>", "ft_lock<CR>")
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
-vim.keymap.set("n", "<Leader>er", vim.diagnostic.open_float)
+--vim.keymap.set("n", "<Leader>er", vim.diagnostic.open_float)
 
 vim.keymap.set("n", "<Leader>x", ":bd<CR>")
 vim.keymap.set("n", "<Tab>", ":bnext<CR>")
@@ -27,6 +27,8 @@ vim.keymap.set("v", "<Leader>{", ":s/\\%V\\(.*\\)\\%V/{\\1}/<CR>", opts)
 local map = vim.keymap.set
 
 -- tabs
+
+map("n", "<leader>ft", function() Snacks.terminal(nil, { win = {position = "float"}}) end, { desc = "Floating Terminal" })
 
 map("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
 map("n", "<leader><tab>f", "<cmd>tabfirst<cr>", { desc = "First Tab" })
