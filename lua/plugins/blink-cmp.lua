@@ -2,8 +2,8 @@ return {
 	"saghen/blink.cmp",
 	opts = {
 	keymap = {
-	['<C-k>'] = { 'select_prev' }, -- Précédent
-	['<C-j>'] = { 'select_next' }, -- Suivant
+	['<C-k>'] = { 'snippet_backward' }, -- Précédent
+	['<C-j>'] = { 'snippet_forward' }, -- Suivant
     ['<C-b>'] = { 'scroll_documentation_up' },
     ['<C-f>'] = { 'scroll_documentation_down' },
     ['<C-Space>'] = { 'show' }, -- Affiche les suggestions

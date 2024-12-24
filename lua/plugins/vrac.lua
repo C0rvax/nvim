@@ -1,16 +1,16 @@
-return {
-
   -- Vrac
 
+return {
+--[[    ##CMP##    ]]
 --    { "hrsh7th/nvim-cmp", dependencies = { "hrsh7th/cmp-emoji",},},
-    { 'L3MON4D3/LuaSnip', build = "make install_jsregexp"},
-    { "williamboman/nvim-lsp-installer"},
-    { "hrsh7th/lspkind-nvim" },
 --    { 'hrsh7th/cmp-nvim-lsp' },
 --    { 'hrsh7th/cmp-buffer' },
 --    { 'hrsh7th/cmp-path' },
 --    { "saadparwaiz1/cmp_luasnip" },
 
+    { 'L3MON4D3/LuaSnip', build = "make install_jsregexp"},
+    { "williamboman/nvim-lsp-installer"},
+    { "hrsh7th/lspkind-nvim" },
     { "mg979/vim-visual-multi"},
 	{ 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 	{ "lewis6991/gitsigns.nvim", config = function() require("gitsigns").setup() end },
@@ -27,42 +27,6 @@ return {
 		})
 		end
 	},
- 
-    -- change some telescope options and a keymap to browse plugin files
-  {
-    "nvim-telescope/telescope.nvim",
-    keys = {
-      -- add a keymap to browse plugin files
-      -- stylua: ignore
-      {
-        "<leader>fp",
-        function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
-        desc = "Find Plugin File",
-      },
-    },
-  
-    -- change some options
-    opts = {
-      defaults = {
-        layout_strategy = "horizontal",
-        layout_config = { prompt_position = "top" },
-        sorting_strategy = "ascending",
-        winblend = 0,
-      },
-    },
-  },
-
-  -- add telescope-fzf-native
-  {
-    "telescope.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
-    },
-  },
 
   -- the opts function can also be used to change the default opts:
   {
