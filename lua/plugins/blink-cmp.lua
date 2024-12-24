@@ -17,7 +17,7 @@ return {
     end },
 ]]
     -- Valide l'élément sélectionné
-    ['<CR>'] = { 'accept' },
+    ['<CR>'] = { 'accept', "fallback" },
     ["<Tab>"] = { "select_next", "fallback" },
     ["<S-Tab>"] = { "select_prev", "fallback" },
     [','] = { "hide", "fallback" },
