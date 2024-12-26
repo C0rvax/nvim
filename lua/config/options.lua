@@ -6,6 +6,7 @@ vim.g.mapleader = ","
 
 local opt = vim.opt
 
+opt.wildignorecase = true
 opt.relativenumber = false
 opt.shiftwidth = 4
 opt.tabstop = 4
