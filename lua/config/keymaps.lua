@@ -43,6 +43,8 @@ map("n", "<leader>te", ":tabedit ")
 map('n', '<leader>gd', ':lua vim.lsp.buf.definition()<CR>')
 map('n', '<leader>gv', ':vsplit | lua vim.lsp.buf.definition()<CR>')
 
+-- Mappage pour la recherche globale (sur tout le disque)
+map('n', '<leader>a', "<cmd>lua require('fzf-lua').live_grep({ cwd = '/home/c0rvax'})<CR>", {desc = "Grep root"})
 
 --vim.keymap.del("n", "<leader>ww")
 --vim.keymap.del("n", "<leader>w-")

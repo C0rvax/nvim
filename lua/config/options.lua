@@ -3,6 +3,7 @@
 -- Add any additional options here
 
 vim.g.mapleader = ","
+vim.g.lazyvim_picker = "fzf"
 
 local opt = vim.opt
 
@@ -14,3 +15,4 @@ opt.autoindent = true
 opt.expandtab = false -- Use spaces instead of tabs
 opt.list = false -- show some invisible characters (tabs...
 opt.colorcolumn = "80" -- color column number 80
+
