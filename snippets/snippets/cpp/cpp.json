@@ -213,10 +213,12 @@
     "try": {
         "prefix": "try",
         "body": [
-            "try {",
+            "try",
+            "{",
             "\t$2",
             "}",
-            "catch (${1:const std::exception&}) {",
+            "catch (${1:const std::exception&})",
+            "{",
             "}"
         ],
         "description": "Code snippet for try catch"
@@ -284,8 +286,9 @@
     "Main function template": {
         "prefix": "main",
         "body": [
-            "int main (int argc, char *argv[]) {",
-            "\t$1",
+            "int main (int argc, char *argv[])",
+            "{",
+            "\t$0",
             "\treturn 0;",
             "}"
         ],
@@ -294,14 +297,26 @@
     "#guard": {
       "prefix": "#guard",
       "body": [
-        "#ifndef __${TM_FILENAME_BASE/(.*)/${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__",
-        "#define __${TM_FILENAME_BASE/(.*)/${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__",
+        "#ifndef __${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__",
+        "# define __${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__",
         "",
         "$0",
         "",
-        "#endif  /* __${TM_FILENAME_BASE/(.*)/${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__ */"
+        "#endif  /* __${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__ */"
       ],
-      "description": "header guard. format :\n\t__<filename>_<extension>__"
+      "description": "header guard. format :\n\tINCLUDE_<dirname>_<filename>_<extension>_"
+    },
+    "#guardi": {
+      "prefix": "#guardi",
+      "body": [
+        "#ifndef __${TM_FILENAME_BASE/g:upcase}_${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__",
+        "# define __${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__",
+        "",
+        "$0",
+        "",
+        "#endif  /* __${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}__ */"
+      ],
+      "description": "header guard. format :\n\tINCLUDE_<dirname>_<filename>_<extension>_"
     },
     "sca": {
       "prefix": "sca",
