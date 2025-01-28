@@ -80,11 +80,9 @@
     "class.cpp": {
         "prefix": "clacc",
         "body": [
-            "${1:MyClass}::$1\t(void)",
-			"{",
-			"}",
+            "${1:MyClass}::$1(void) {}",
 			"",
-			"$1::$1\t($1 const & src)",
+			"$1::$1($1 const & src)",
 			"{",
 			"\t*this = src;",
 			"}",
@@ -96,9 +94,7 @@
 			"\treturn *this;",
 			"}",
 			"",
-			"$1::~$1\t(void)",
-			"{",
-			"}"
+			"$1::~$1\t(void) {}",
         ],
         "description": "Code snippet for class.cpp"
     },
@@ -108,10 +104,10 @@
             "class	${1:MyClass}",
 			"{",
             "	public:",
-            "	\t$1(void);",
-            "	\t$1($1 const & src);",
-            "	\t$1 &operator=($1 const & rhs);",
-            "	\t~$1(void);",
+            "	$1(void);",
+            "	$1($1 const & src);",
+            "	$1 &operator=($1 const & rhs);",
+            "	~$1(void);",
             "",
             "	private:",
             "	\t$0",
@@ -180,12 +176,12 @@
     "#ifndef": {
         "prefix": "#ifndef",
         "body": [
-        "#ifndef ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}",
-        "# define ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}",
+        "#ifndef ${1:header}_HPP",
+        "# define $1_HPP",
         "",
         "$0",
         "",
-        "#endif"
+        "#endif /* __$1_HPP__ */"
         ],
         "description": "Code snippet for #ifndef"
     },
@@ -202,7 +198,8 @@
     "switch": {
         "prefix": "switch",
         "body": [
-            "switch (${1:switch_on}) {",
+            "switch (${1:switch_on})",
+			"{",
             "\tdefault:",
             "\t\t$0",
             "\t\tbreak;",
