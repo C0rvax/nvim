@@ -1,6 +1,9 @@
 return {
 	"saghen/blink.cmp",
-	version = "v0.9.3",
+--	version = "v0.9.3",
+    sources = {
+      default = { 'snippets', 'lsp', 'path', 'buffer' },
+      },
 	opts = {
 	keymap = {
 	['<C-k>'] = { 'snippet_backward' }, -- Précédent
