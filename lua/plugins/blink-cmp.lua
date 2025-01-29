@@ -1,5 +1,6 @@
 return {
 	"saghen/blink.cmp",
+	version = "v0.9.3",
 	opts = {
 	keymap = {
 	['<C-k>'] = { 'snippet_backward' }, -- Précédent
