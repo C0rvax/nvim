@@ -16,22 +16,39 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 | `g U`    | Passer du texte en uppercase |
 | `g u`    | Passer du texte en lowercase |
 | `J`      | Pour joindre 2 lignes |
+| `<<`     | indent left |
+| `>>`     | indent right |
 | `%s/search/replace/g` | Pour sed un fichier |
+| `<leader>r`| Met la ligne entre `{}` et indent |
 
 ## 📌 Navigation
 | Commande | Description |
 |----------|------------|
+| `<leader>e`| Ouvre le navigateur de fichier |
+| `vs <filename>`| Ouvre filename (ou le même fichier si vide) dans un split vertical |
+| `sp <filename>`| Ouvre filename (ou le même fichier si vide) dans un split horizontal |
 | `*`      | Highlight un mot |
 | `n`      | Prochaine iteration du mot |
 | `N`      | Précédente iteration du mot |
 | `.`      | Répète la dernière action |
 | `gg`     | Aller en haut du fichier |
 | `G`      | Aller en bas du fichier |
-| `Ctrl F` | Descend d'un écran |
-| `Ctrl B` | Monte d'un écran |
+| `Ctrl f` | Descend d'un écran |
+| `Ctrl b` | Monte d'un écran |
 | `w`      | Aller au mot suivant |
 | `b`      | Aller au mot précédent |
 | `K`      | Ouvre la page du manuel du mot sous le curseur |
+
+## 📜 Macros
+| Commande | Description |
+|----------|------------|
+| `q<reg><commands>q` | Reccord macro with the register reg |
+| `:reg` | display registers |
+| `:reg <reg>` | display reg |
+| `@<reg>` | replay reg |
+| `@@` | repeat last macro |
+| `<x>@<reg>` | replay x times reg |
+| `<x>@@` | repeat x times last macro |
 
 ## 🔧 Manipulation avancée
 ```vim
