@@ -16,10 +16,3 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.b.autoformat = false
   end,
 })
-vim.api.nvim_create_autocmd("User", {
-  pattern = "VMLeave",
-  callback = function()
-    vim.cmd("stopinsert") -- Réinitialise le mode d'insertion
-    vim.cmd("startinsert") -- Retourne dans le mode insertion proprement
-  end,
-})

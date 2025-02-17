@@ -8,10 +8,10 @@ return {
 --    { 'hrsh7th/cmp-path' },
 --    { "saadparwaiz1/cmp_luasnip" },
 
---    { 'L3MON4D3/LuaSnip', build = "make install_jsregexp"},
+    { 'L3MON4D3/LuaSnip', build = "make install_jsregexp"},
     { "williamboman/nvim-lsp-installer"},
     { "hrsh7th/lspkind-nvim" },
---    { "mg979/vim-visual-multi"},
+    { "mg979/vim-visual-multi"},
 	{ 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 	{ "lewis6991/gitsigns.nvim", config = function() require("gitsigns").setup() end },
 	{ "nvim-lualine/lualine.nvim", config = function() require("lualine").setup() end },

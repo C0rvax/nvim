@@ -1,9 +1,5 @@
 return {
 	"saghen/blink.cmp",
---	version = "v0.9.3",
-    sources = {
-      default = { 'snippets', 'lsp', 'path', 'buffer' },
-      },
 	opts = {
 	keymap = {
 	['<C-k>'] = { 'snippet_backward' }, -- Précédent
@@ -21,7 +17,7 @@ return {
     end },
 ]]
     -- Valide l'élément sélectionné
-    ['<CR>'] = { 'select_and_accept', "fallback" },
+    ['<CR>'] = { 'accept', "fallback" },
     ["<Tab>"] = { "select_next", "fallback" },
     ["<S-Tab>"] = { "select_prev", "fallback" },
     [','] = { "hide", "fallback" },
