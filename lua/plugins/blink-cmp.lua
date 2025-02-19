@@ -1,8 +1,36 @@
 return {
   "saghen/blink.cmp",
   --	version = "v0.9.3",
+  dependencies = {
+    "moyiz/blink-emoji.nvim",
+  },
   sources = {
-    default = { "snippets", "lsp", "path", "buffer" },
+    default = { "snippets", "lsp", "path", "buffer", "emoji" },
+    providers = {
+      snippets = {
+        min_keyword_length = 2,
+        score_offset = 1000,
+      },
+      lsp = {
+        min_keyword_length = 3,
+        score_offset = 900,
+      },
+      path = {
+        min_keyword_length = 3,
+        score_offset = 300,
+      },
+      buffer = {
+        min_keyword_length = 5,
+        score_offset = 200,
+      },
+      emoji = {
+        module = "blink-emoji",
+        name = "Emoji",
+        score_offset = 800,
+        min_keyword_length = 2,
+        opts = { insert = true },
+      },
+    },
   },
   opts = {
     keymap = {
