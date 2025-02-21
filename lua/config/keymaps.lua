@@ -13,6 +13,14 @@ map("n", "<C-space>", "?", opts)
 map("n", "<C-j>", "<C-f>", opts)
 map("n", "<C-k>", "<C-b>", opts)
 
+--Toggle blink.cmp
+vim.keymap.set("n", "<leader>ue", function()
+  vim.api.nvim_buf_set_var(0, "completion", false)
+end, { desc = "Disable blink.cmp for current buffer" })
+vim.keymap.set("n", "<leader>uE", function()
+  vim.api.nvim_buf_set_var(0, "completion", true)
+end, { desc = "Enable blink.cmp for current buffer" })
+
 --Brackets parenthesis quote
 map("v", "<Leader>(", "<esc>`>a)<esc>`<i(<esc>", { desc = "parenthesis" })
 map("n", "<Leader>r", "0i{<CR><esc>o}<esc>k", { desc = "bracket" })
