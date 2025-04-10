@@ -34,6 +34,24 @@ map("n", "<leader>ft", function()
   Snacks.terminal(nil, { win = { position = "float" } })
 end, { desc = "Floating Terminal" })
 
+-- Toggle copilot
+local copilot_active = false
+function ToggleCopilot()
+  copilot_active = not copilot_active
+  if copilot_active then
+    vim.cmd("Copilot enable")
+    print("Copilot activé")
+  else
+    vim.cmd("Copilot disable")
+    print("Copilot désactivé")
+  end
+end
+
+-- Associe la fonction ToggleCopilot à la combinaison <leader>cp
+vim.keymap.set('n', '<leader>cp', ToggleCopilot, { noremap = true, silent = true, desc = "Bascule Copilot" })
+
+
+
 -- tabs
 map("n", "<leader>te", ":tabedit ", opts)
 map("n", "<Leader>x", ":bd<CR>", opts)
