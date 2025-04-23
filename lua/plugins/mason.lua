@@ -8,7 +8,13 @@ return {
         "shfmt", --Formater for shell scripts
         "flake8", --Linter for python (detects errors and bad syntax)
         "clangd", --LSP server for C/C++
-      },
+        "tailwindcss-language-server",
+        "css-variables-language-server",
+        "vtsls",
+        "typescript-language-server",
+        "harper-ls",
+        "superhtml",
+        },
     },
   },
 }
