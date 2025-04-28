@@ -10,9 +10,7 @@ return {
         "clangd", --LSP server for C/C++
         "tailwindcss-language-server",
         "css-variables-language-server",
-        "vtsls",
         "typescript-language-server",
-        "harper-ls",
         "superhtml",
         },
     },
